@@ -4,8 +4,18 @@ fun main(){
 
     var computerChoice = ""
     var playerChoice = ""
-    println("Rock, Paper or Scissors? Enter your choice!")
-    playerChoice = readln()
+    var validInput = false
+
+    while(!validInput) {
+        println("Rock, Paper or Scissors? Enter your choice!")
+        playerChoice = readln().trim()
+
+        if (playerChoice == "Rock" || playerChoice == "Paper" || playerChoice == "Scissors") {
+            validInput = true
+        } else {
+            println("Invalid input. Please enter Rock, Paper or Scissors exactly as shown")
+        }
+    }
 
     val randomNumber = (1 .. 3).random()
 
